@@ -4,43 +4,49 @@ Example how to manage your app styles with Bloc.
 
 ## Getting Started
 
-1. Create interface named AppStyles, and define all styles you need for your app in here:
-
-```
+**1. Create interface named AppStyles, and define all styles you need for your app in here:**
+```dart
 abstract class AppStyles {
-  TextStyle getTitleStyle();
+  ThemeData getThemeData();
 }
 ```
 
-2. Each app style will extends from AppStyles interface. So it will required you override all method of AppStyles.
-
-```
+**2. Each app style will extends from AppStyles interface. So it will required you override all method of AppStyles.**
+```dart
 class DefaultStyles implements AppStyles {
 
   @override
-  TextStyle getTitleStyle() {
-    return TextStyle(
-      color: Colors.red,
-      fontSize: 14
-    );
+  ThemeData getThemeData() {
+    return ThemeData(
+        fontFamily: AppFonts.openSans,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: AppColors.grey,
+        primaryColor: AppColors.white,
+        brightness: Brightness.light,
+        backgroundColor: AppColors.white  ,
+        scaffoldBackgroundColor:AppColors.white);
   }
-
 }
-
-class SpecialStyles implements AppStyles {
-
+class DarkStyles implements AppStyles {
   @override
-  TextStyle getTitleStyle() {
-    return TextStyle(
-      color: Colors.blue,
-      fontSize: 17
+  ThemeData getThemeData() {
+    return ThemeData(
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+      primarySwatch: AppColors.grey,
+      primaryColor: AppColors.satinDepBlack,
+      brightness: Brightness.dark,
+      backgroundColor: AppColors.closeShutter,
+      scaffoldBackgroundColor: AppColors.closeShutter,
     );
   }
-
 }
 ```
 
 Use interface to ensure all styles you define have the same config.
 
-3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.
-Ex: _appCubit.styles.getTitleStyle()
+**3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.** 
+```dart
+_appCubit.styles.getThemeData()
+```
+## **[Dark mode example](lib/app)**
+
