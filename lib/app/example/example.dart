@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage>
         body: SafeArea(
           child: Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.only(top: height * 0.1),
+              margin: EdgeInsets.only(top: height * 0.1),
             child: Column(
               children: [
                 Stack(
@@ -118,24 +118,26 @@ class _HomePageState extends State<HomePage>
                 SizedBox(
                   height: height * .05,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    buildDot(
-                      width: width * 0.022,
-                      height: width * 0.022,
-                      color: const Color(0xFFd9d9d9),
-                    ),
-                    buildDot(
-                        width: width * 0.055,
+                Expanded(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      buildDot(
+                        width: width * 0.022,
                         height: width * 0.022,
-                        color: _appBloc.styles.getDotStyle()),
-                    buildDot(
-                      width: width * 0.022,
-                      height: width * 0.022,
-                      color: const Color(0xFFd9d9d9),
-                    ),
-                  ],
+                        color: const Color(0xFFd9d9d9),
+                      ),
+                      buildDot(
+                          width: width * 0.055,
+                          height: width * 0.022,
+                          color: _appBloc.styles.getDotStyle()),
+                      buildDot(
+                        width: width * 0.022,
+                        height: width * 0.022,
+                        color: const Color(0xFFd9d9d9),
+                      ),
+                    ],
+                  ),
                 ),
                 // skip & next
               ],

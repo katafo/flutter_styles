@@ -22,10 +22,6 @@ abstract class AppStyles {
 }
 
 class DefaultStyles implements AppStyles {
-  @override
-  TextStyle getTextStyle({TextStyle customStyle}) {
-    return TextStyle().merge(customStyle);
-  }
 
   @override
   ThemeData getThemeData() {
@@ -35,8 +31,12 @@ class DefaultStyles implements AppStyles {
         primarySwatch: AppColors.grey,
         primaryColor: AppColors.white,
         brightness: Brightness.light,
-        backgroundColor: Color(0xFFFFFFFF),
-        scaffoldBackgroundColor: Color(0xFFFFFFFF));
+        backgroundColor: AppColors.white  ,
+        scaffoldBackgroundColor:AppColors.white);
+  }
+  @override
+  TextStyle getTextStyle({TextStyle customStyle}) {
+    return TextStyle().merge(customStyle);
   }
 
   @override
@@ -76,11 +76,6 @@ class DefaultStyles implements AppStyles {
 
 class DarkStyles implements AppStyles {
   @override
-  TextStyle getTextStyle({TextStyle customStyle}) {
-    return TextStyle().merge(customStyle);
-  }
-
-  @override
   ThemeData getThemeData() {
     return ThemeData(
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -91,6 +86,12 @@ class DarkStyles implements AppStyles {
       scaffoldBackgroundColor: AppColors.closeShutter,
     );
   }
+
+  @override
+  TextStyle getTextStyle({TextStyle customStyle}) {
+    return TextStyle().merge(customStyle);
+  }
+
 
   @override
   Color getDotStyle() {
