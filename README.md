@@ -44,8 +44,9 @@ class DarkStyles implements AppStyles {
 
 Use interface to ensure all styles you define have the same config.
 
-**3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.**
-## For example: 
+**3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.** 
 ```dart
 _appCubit.styles.getThemeData()
 ```
+## **[Dark mode example](lib/app)**
+
