@@ -4,16 +4,14 @@ Example how to manage your app styles with Bloc.
 
 ## Getting Started
 
-1. Create interface named AppStyles, and define all styles you need for your app in here:
-
+**1. Create interface named AppStyles, and define all styles you need for your app in here:**
 ```dart
 abstract class AppStyles {
   ThemeData getThemeData();
 }
 ```
 
-2. Each app style will extends from AppStyles interface. So it will required you override all method of AppStyles.
-
+**2. Each app style will extends from AppStyles interface. So it will required you override all method of AppStyles.**
 ```dart
 class DefaultStyles implements AppStyles {
 
@@ -46,8 +44,8 @@ class DarkStyles implements AppStyles {
 
 Use interface to ensure all styles you define have the same config.
 
-3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.
-Ex: 
+**3. Then create AppCubit which wrap your MaterialApp. So that, you can call your style anywhere in app.**
+## For example: 
 ```dart
 _appCubit.styles.getThemeData()
 ```
